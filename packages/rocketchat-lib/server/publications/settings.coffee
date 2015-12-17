@@ -1,5 +1,5 @@
 Meteor.publish 'settings', (ids = []) ->
-	console.log '[publish] settings'.green
+	console.log '[publish] settings thienhv'.green
 
 	filter =
 		hidden: { $ne: true }
@@ -12,7 +12,7 @@ Meteor.publish 'settings', (ids = []) ->
 	return RocketChat.models.Settings.find filter, { fields: _id: 1, value: 1 }
 
 Meteor.publish 'admin-settings', ->
-	console.log '[publish] admin-settings'.green
+	console.log '[publish] admin-settings thienhv'.green
 
 	unless @userId
 		return @ready()

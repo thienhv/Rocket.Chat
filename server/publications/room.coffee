@@ -2,7 +2,7 @@ Meteor.publish 'room', (typeName) ->
 	unless this.userId
 		return this.ready()
 
-	console.log '[publish] room ->'.green, 'arguments:', arguments
+	console.log '[publish] room thienhv ->'.green, 'arguments:', arguments
 
 	if typeof typeName isnt 'string'
 		return this.ready()

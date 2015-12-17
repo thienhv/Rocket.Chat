@@ -2,7 +2,7 @@ Meteor.publish 'subscription', ->
 	unless this.userId
 		return this.ready()
 
-	console.log '[publish] subscription'.green
+	console.log '[publish] subscription thienhv'.green
 
 	RocketChat.models.Subscriptions.findByUserId this.userId,
 		fields:

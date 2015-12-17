@@ -1,6 +1,6 @@
 Meteor.methods
 	canAccessRoom: (rid, userId) ->
-		console.log '[methods] canAccessRoom -> '.green, 'userId:', userId, 'rid:', rid
+		console.log '[methods] canAccessRoom thienhv -> '.green, 'userId:', userId, 'rid:', rid
 
 		user = RocketChat.models.Users.findOneById userId, fields: username: 1
 

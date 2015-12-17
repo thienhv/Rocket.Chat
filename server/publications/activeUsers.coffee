@@ -2,7 +2,7 @@ Meteor.publish 'activeUsers', ->
 	unless this.userId
 		return this.ready()
 
-	console.log '[publish] activeUsers'.green
+	console.log '[publish] activeUsers thienhv'.green
 
 	RocketChat.models.Users.findUsersNotOffline
 		fields:

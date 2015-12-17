@@ -31,7 +31,7 @@ Meteor.publish 'fullUserData', (filter, limit) ->
 		limit: limit
 		sort: { username: 1 }
 
-	console.log '[publish] fullUserData'.green, filter, limit
+	console.log '[publish] fullUserData thienhv'.green, filter, limit
 
 	if filter
 		if limit is 1

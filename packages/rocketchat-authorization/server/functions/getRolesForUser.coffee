@@ -1,5 +1,5 @@
 RocketChat.authz.getRolesForUser = (userId, scope) ->
-	console.log '[methods] getRolesForUser -> '.green, 'arguments:', arguments
+	console.log '[methods] getRolesForUser thienhv-> '.green, 'arguments:', arguments
 	# returns roles for the given scope as well as the global scope
 	unless scope
 		scope = Roles.GLOBAL_GROUP
