@@ -1,9 +1,9 @@
 Meteor.startup ->
 	Meteor.defer ->
 
-		if not RocketChat.models.Rooms.findOneById('GENERAL')?
-			RocketChat.models.Rooms.createWithIdTypeAndName 'GENERAL', 'c', 'general',
-				default: true
+		# if not RocketChat.models.Rooms.findOneById('GENERAL')?
+		# 	RocketChat.models.Rooms.createWithIdTypeAndName 'GENERAL', 'c', 'general',
+		# 		default: true
 
 		if not RocketChat.models.Users.findOneById('rocket.cat')?
 			RocketChat.models.Users.create
