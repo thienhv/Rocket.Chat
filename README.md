@@ -1,5 +1,11 @@
 ![Rocket.Chat logo](https://rocket.chat/images/logo/logo-dark.svg?v3)
 
+
+# Run server
+```
+export MONGO_URL="mongodb://localhost:27017/jinjer"
+```
+
 The Ultimate Open Source WebChat Platform
 
 * [Live Demo](#live-demo)
