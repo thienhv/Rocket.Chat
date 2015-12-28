@@ -19,7 +19,7 @@ Meteor.methods
 		now = new Date()
 
 		me = Meteor.user()
-
+		console.log(Meteor.user())
 		members.push me.username
 
 		# name = s.slugify name

@@ -7,11 +7,14 @@
 			<div class="unread-rooms top-unread-rooms hidden">
 				{{_ "More_unreads"}} <i class="icon-up-big"></i>
 			</div>
+			<!-- Room -->
 			<div class="rooms-list" aria-label="{{_ "Channels"}}" role="region">
 				<div class="wrapper">
 					{{ > unreadRooms }}
 
+					<!-- History -->
 					<h3 class="history-div">
+						<!-- History inner history-div -->
 						<a href="{{pathFor 'privateHistory'}}">{{_ "History"}}</a>
 					</h3>
 				</div>
@@ -27,7 +30,7 @@
 			<span class="arrow bottom"></span>
 		{{/if}}
 		<footer class="footer">
-			{{{footer}}}
+			<!-- {{{footer}}} -->
 		</footer>
 	</aside>
 </template>

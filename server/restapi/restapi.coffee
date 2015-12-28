@@ -13,7 +13,13 @@ Api.addRoute 'version', authRequired: false,
 		version = {api: '0.1', rocketchat: '0.5'}
 		status: 'success', versions: version
 
-Api.addRoute 'publicRooms', authRequired: true,
+Api.addRoute 'getLoginToken/:user_id', authRequired: false,
+  get: ->
+    stampedLoginToken = Accounts._generateStampedLoginToken()
+    Accounts._insertLoginToken(@urlParams.user_id, stampedLoginToken)
+    status: 'success', data: {user_id: @urlParams.user_id, token: stampedLoginToken.token}
+
+Api.addRoute 'publicRooms', authRequired: false,
 	get: ->
 		rooms = RocketChat.models.Rooms.findByType('c', { sort: { msgs:-1 } }).fetch()
 		status: 'success', rooms: rooms
