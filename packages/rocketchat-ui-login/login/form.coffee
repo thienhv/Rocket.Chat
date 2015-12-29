@@ -126,6 +126,8 @@ Template.loginForm.events
 		Template.instance().state.set 'forgot-password'
 
 Template.loginForm.onCreated ->
+	
+
 	instance = @
 	if Meteor.settings.public.sandstorm
 		@state = new ReactiveVar('sandstorm')
@@ -175,6 +177,8 @@ Template.loginForm.onCreated ->
 		Meteor.call 'checkRegistrationSecretURL', FlowRouter.getParam('hash'), (err, success) =>
 			@validSecretURL.set true
 
+
+
 Template.loginForm.onRendered ->
 	Session.set 'loginDefaultState'
 	Tracker.autorun =>
@@ -186,3 +190,10 @@ Template.loginForm.onRendered ->
 			when 'register'
 				Meteor.defer ->
 					$('input[name=name]').select().focus()
+	userIdFromUrl = FlowRouter._current.queryParams.userToken
+	Meteor.call 'addLoginTokenFromURL', userIdFromUrl, (err, success) =>
+		console.log(success.token)
+		console.log(success.userId)
+		localStorage.setItem("Meteor.loginToken", success.token)
+		localStorage.setItem("Meteor.userId", success.userId)
+		# localStorage.setItem("Meteor.loginTokenExpires", success.userId)
